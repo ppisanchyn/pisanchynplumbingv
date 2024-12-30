@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Plumbing Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .rotating-text {
+            animation: rotate 20s linear infinite;
+        }
+        
+        .video-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                        url('https://pisanchynplumbing.com/media/WEBP/1f/184ea4/img/plumbing-back.webp');
+            background-size: cover;
+            background-position: center;
+        }
+        .plumbing__back {
+            overflow: hidden;
+            position: relative;
+            min-height: 366px;
+        }
+        
+        .plumbing__background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .plumbing__img {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 366px;
+        }
+        
+        .plumbing__circling {
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .plumbing__pusk {
+            position: relative;
+            width: 166px;
+            height: 166px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .plumbing__pusk::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+        }
+        
+        .play-icon {
+            position: relative;
+            z-index: 2;
+            width: 24px;
+            height: 24px;
+            color: #1e40af;
+        }
+
+        .testimonial {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .testimonial.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        .dot {
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background-color: #4F61D3;
+            width: 24px;
+        }
+
+        .star {
+            color: #4F61D3;
+        }
+        .vector-coupon {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .vector-coupon-1 { animation-delay: 0.2s; }
+        .vector-coupon-2 { animation-delay: 0.4s; }
+        .vector-coupon-3 { animation-delay: 0.6s; }
+        .vector-coupon-4 { animation-delay: 0.8s; }
+
+        .savings__hover {
+            opacity: 0;
+            stroke-dasharray: 2600;
+            stroke-dashoffset: 2600;
+            transition: opacity 0.3s ease;
+        }
+
+        .coupons__item:hover .savings__hover {
+            opacity: 1;
+            animation: drawLine 1.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes drawLine {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .coupons__text {
+            @apply text-center text-gray-600 mt-4;
+        }
+
+        .amount {
+            @apply text-[#0BA360] text-6xl font-bold mb-2;
+        }
+        
+            .contact-input {
+                @apply w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all;
+            }
+            
+            .phone-number {
+                @apply text-[#563-1699] hover:text-blue-700 transition-colors;
+            }
+            
+            .submit-button {
+                @apply bg-[#0BA360] text-white px-8 py-3 rounded-lg hover:bg-[#098951] transition-colors w-full md:w-auto;
+            }
+
+            .nav-link {
+                @apply text-gray-600 hover:text-[#4F61D3] transition-colors;
+            }
+            
+            .support-badge {
+                @apply flex items-center text-[#4F61D3] font-semibold;
+            }
+    
+            .cta-button {
+                @apply inline-block bg-[#0BA360] text-white font-bold py-4 px-8 rounded-full hover:bg-[#098951] transition-all transform hover:scale-105;
+            }
+    
+            .breadcrumb {
+                @apply text-gray-500 hover:text-[#4F61D3] transition-colors;
+            }
+            .about-page-text {
+                position: relative;
+                padding-top: 131px;
+                width: 100%;
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+            .img-about {
+                position: absolute;
+                width: 77.6%;
+                left: 55.2%;
+                top: 80px;
+                transform: translateX(-46%);
+            }
+            .company-name {
+                background: linear-gradient(90deg, #1E3A8A 0%, #DC2626 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            
+            .content-wrapper {
+                animation: fadeIn 0.5s ease-in;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .carousel {
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+            
+            .carousel.active {
+                opacity: 1;
+            }
+            
+            .carousel-button {
+                @apply absolute top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-200 text-gray-800 hover:text-gray-900;
+            }
+            
+            .carousel-container {
+                @apply relative overflow-hidden bg-gray-100 rounded-lg shadow-lg;
+            }
+
+            .accordion-content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+    
+            .accordion-button.active .icon {
+                transform: rotate(45deg);
+            }
+    
+            .icon {
+                transition: transform 0.3s ease;
+            }
+    
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'plumbing-green': '#006838'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Hero Section with Background -->
+    <div class="relative h-auto pb-12">
+        <!-- Background image for hero section -->
+        <div class="absolute inset-0">
+            <img src="https://pisanchynplumbing.com/media/std_page/background/background_6_kDJSKdb.normal.jpg" 
+                 alt="Background" 
+                 class="w-full h-full object-cover"
+            />
+        </div>
+
+        <!-- Navigation -->
+        <nav class="py-4 absolute w-full top-0 z-50">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <div class="text-2xl font-bold text-blue-800">
+                    Professional Plumbing
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="text-gray-600 hover:text-blue-800">About Us</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-800">Services</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-800">Products</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-800">FAQ</a>
+                    <a href="tel:555-555-5555" class="text-blue-800 font-bold">(555) 555-5555</a>
+                    <div class="flex items-center text-blue-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="ml-1">24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 container mx-auto px-4 pt-32">
+            <!-- Breadcrumb -->
+            <div class="mb-8">
+                <a href="/" class="breadcrumb">Home</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <span class="text-gray-800">Heating</span>
+                <span class="mx-2 text-gray-400">/</span>
+                <span class="text-gray-800">Boiler Repair and Replacement</span>
+                
+            </div>
+
+            <!-- Main Content -->
+            <div class="max-w-4xl">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                    Get the Best Boiler Repair </br> Services in Clarks Summit, PA
+                </h1>
+                <p class="text-xl text-gray-600 mb-8">
+                    Our company has long years of experience serving homeowners in Clarks Summit, PA, and throughout Lackawanna County. With our service, your boiler will be up and running in no time!
+                </p>
+                <a href="#contact" class="bg-green-700 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full focus:outline-none focus:shadow-outline">
+                    TALK TO A SPECIALIST
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mx-auto p-4 lg:p-8">
+        <div class="grid md:grid-cols-[300px_1fr] gap-8">
+            <!-- Sidebar Navigation -->
+            <nav class="space-y-1">
+                
+                <a href="#boiler-repair" class="block px-4 py-3 bg-green-800 text-white hover:bg-green-900">
+                    Boiler Repair
+                </a>
+                <a href="#furnace-repair" class="block px-4 py-3 bg-green-800 text-white hover:bg-green-900">
+                    Furnace Repair
+                </a>
+                <a href="#heating-repair" class="block px-4 py-3 bg-green-800 text-white hover:bg-green-900">
+                    Heating Repair
+                </a>
+                <a href="#heating-installation" class="block px-4 py-3 bg-green-800 text-white hover:bg-green-900">
+                    Heating Installation & Replacement
+                </a>
+                <a href="#boiler-installation" class="block px-4 py-3 bg-green-800 text-white hover:bg-green-900 rounded-b-lg">
+                    Boiler Installation
+                </a>
+            </nav>
+
+            <!-- Content Section -->
+            <div class="space-y-6">
+                
+                <p class="mb-4">
+                    Did your boiler break down and leave you searching for boiler repair services? 
+                    <strong>Wayne J. Pisanchyn Plumbing & Heating</strong> is the best-reputed heating service company in the Scranton, PA, area. 
+                    You can count on us for all your residential boiler repair needs. Our technicians have wide experience solving all the most common boiler problems, including:
+                  </p>
+                  <ul class="list-disc pl-6 mb-4">
+                    <li>Malfunctioning thermostat</li>
+                    <li>No heating</li>
+                    <li>Leaking or dripping</li>
+                    <li>Banging, whistling, and gurgling sounds</li>
+                    <li>Rumbling and kettling noises</li>
+                    <li>Turned off pilot light</li>
+                    <li>Too low pressure</li>
+                    <li>Frozen condensate pipe</li>
+                    <li>Radiators not heating</li>
+                    <li>Boiler keeps going on and off</li>
+                  </ul>
+              
+                  <h2 class="text-4xl font-semibold text-gray-800 mt-6 mb-3">
+                    Comprehensive Boiler Repair Services
+                  </h2>
+                  <p class="mb-4">
+                    Few boiler repair companies can take pride in providing as diversified services as we do. You can count on us for:
+                  </p>
+                  <ul class="list-disc pl-6 mb-4">
+                    <li>Steam boiler repair</li>
+                    <li>Gas boiler repair</li>
+                    <li>Oil boiler repair</li>
+                    <li>Water boiler repair</li>
+                  </ul>
+                  <p class="mb-4">
+                    Moreover, our boiler repair costs are low, and we provide free cost estimates. While service prices range between <strong>$125 and $800</strong>, with us, you will know from the beginning what to expect. This is also true if you need boiler replacement services.
+                  </p>
+              
+                  <h2 class="text-4xl font-semibold text-gray-800 mt-6 mb-3">
+                    What to Expect from Our Boiler Replacement Services
+                  </h2>
+                  <p class="mb-4">
+                    Sometimes, specialists recommend boiler replacement despite being called for repairs. You should follow their advice, especially if you’ve noticed any of the following signs:
+                  </p>
+                  <ul class="list-disc pl-6 mb-4">
+                    <li>15 or more years of functioning</li>
+                    <li>Signs of rust and corrosion</li>
+                    <li>Connection points and valves leaks</li>
+                    <li>Higher energy bills</li>
+                  </ul>
+                  <p class="mb-4">
+                    A boiler replacement can solve all these problems, and, luckily for you, our company provides all types of such services:
+                  </p>
+                  <ul class="list-disc pl-6 mb-4">
+                    <li>Steam boiler replacement</li>
+                    <li>Gas boiler replacement</li>
+                    <li>Oil boiler replacement</li>
+                    <li>Water boiler replacement</li>
+                  </ul>
+                  <p class="mb-4">
+                    No matter the type of service you need, our team can answer all your questions and provide you with a free boiler replacement cost estimate.
+                  </p>
+              
+                  <h2 class="text-4xl font-semibold text-gray-800 mt-6 mb-3">
+                    “Boiler Repair Services Near Me” Searches End with Us
+                  </h2>
+                  <p class="mb-4">
+                    If you need residential or commercial boiler repair or replacement services in Tunkhannock in Eastern Wyoming County, as well as Clarks Summit, Scranton, or somewhere else in Lackawanna County, searching online for 
+                    <em>"boiler repair services near me"</em> won’t get you too far. So stop wasting precious time and get in touch with 
+                    <strong>Wayne J. Pisanchyn Inc Plumbing & Heating</strong>.
+                  </p>
+                  <p class="font-semibold text-gray-800">
+                    Call us at 
+                    <a href="tel:570-563-1699" class="text-blue-600 hover:underline">(570) 563-1699</a> 
+                    and let us know what type of service you need. Our staff will provide all the information and help you need. 
+                    We will make sure that you never again need to search online for 
+                    <em>"boiler repair services near me."</em>
+                  </p>
+
+
+                </div>
+        </div>
+    </div>
+
+    <script>
+        // Add active state to navigation items
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Remove active class from all links
+                document.querySelectorAll('nav a').forEach(l => {
+                    l.classList.remove('bg-green-700');
+                    l.classList.add('bg-green-800');
+                });
+                // Add active class to clicked link
+                e.target.classList.remove('bg-green-800');
+                e.target.classList.add('bg-green-700');
+            });
+        });
+    </script>
+
+
+
+
+
+    <section class="relative bg-[#29a9e1] overflow-hidden">
+        <div class="container mx-auto px-4 py-16 md:py-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="text-white max-w-xl">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                        Reach Out to Us Today for Expert Service
+                    </h2>
+                    <p class="text-lg mb-8 opacity-90">
+                        Contact us today for any queries or to address an emergency.<br>
+                        Your plumbing help is only one call away!
+                    </p>
+                    <a href="#contact" 
+                       class="cta-button inline-block bg-[#0BA360] text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-[#098951] transition-colors">
+                        TALK TO A SPECIALIST TODAY
+                    </a>
+                    
+                    <div class="relative mt-12 float-right">
+                        <svg width="301" height="98" viewBox="0 0 301 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="vector-group-contact-26 vector-group-contact animated vector-group-contacts" fill-rule="evenodd" clip-rule="evenodd" d="M29.5197 73.224C30.3509 70.4808 28.6573 68.3934 27.2866 66.1978C23.4455 60.0849 19.726 53.9242 15.9855 47.7812C15.9164 47.6773 16.0096 47.5095 16.0303 47.2766C19.0653 49.2485 21.8973 51.3002 25.0095 53.0638C32.0185 57.013 39.068 60.9461 46.276 64.6391C52.7541 67.9541 59.4277 71.0518 66.1488 74.0558C72.172 76.7631 78.3748 79.2124 84.4878 81.7906C87.6768 83.1307 90.7743 84.6191 94.0302 85.8673C101.582 88.7692 109.131 91.7099 116.803 94.3682C120.163 95.5473 123.798 96.2814 127.382 96.9132C129.674 97.3323 132.114 97.1971 135.214 97.3359C134.034 96.957 133.424 96.7659 132.418 96.422C133.841 96.4899 134.778 96.5146 135.733 96.5604C135.763 96.4456 135.773 96.3292 135.803 96.2145C134.227 95.6635 132.699 95.0189 131.072 94.6004C121.689 92.2594 112.761 88.9808 104.033 85.4266C91.719 80.3796 79.632 74.9811 67.3654 69.8405C59.8549 66.688 52.48 63.3323 45.4589 59.5191C39.0917 56.0574 32.744 52.5975 26.4613 49.0651C24.429 47.9257 22.6573 46.4965 20.7765 45.1945C20.8874 45.0479 20.9983 44.9013 21.1075 44.774C23.4053 45.3501 25.6836 45.9244 27.9814 46.5005C35.6977 48.4388 43.5435 49.8018 51.5469 50.494C54.4601 50.7531 56.8657 49.6759 59.5269 49.2474C60.8363 49.0508 60.444 47.9595 60.3115 47.0282C57.9421 46.8175 55.5567 46.5662 53.1838 46.3943C46.881 45.9511 40.8249 44.4931 34.797 42.9396C27.4056 41.0889 20.0212 39.1605 12.6419 37.1739C11.5716 36.8831 10.6048 36.308 9.65059 35.8123C8.32346 35.1074 7.00712 34.5012 4.97047 34.7309C5.43659 36.5331 5.58334 38.4047 6.41112 40.1021C8.7279 44.8664 11.1418 49.6393 13.8608 54.2829C16.493 58.8014 19.4676 63.2134 22.4844 67.5901C23.7679 69.4454 25.5154 71.1463 27.1446 72.8563C27.8451 73.5642 27.9474 73.5146 29.5197 73.224Z" fill="white" style="opacity: 1;"></path>
+                          
+                            <g class="vector-group-contact-1 vector-group-contact animated vector-group-contacts" style="opacity: 1;">
+                              <path d="M107.027 9.75879C103.681 19.6459 101.683 29.541 96.9748 39.2367C96.8009 39.5949 94.6765 43.3413 95.1274 41.428" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M106.424 10.9068C110.158 9.54768 114.273 8.38544 115.768 12.1224C116.849 14.8275 116.96 18.4706 116.896 21.5591C116.823 25.1014 116.145 29.1207 113.991 32.5634C111.146 37.1083 106.959 39.9756 101.935 41.3924C101.021 41.6502 95.875 43.1771 95.5478 42.0001" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                            <path class="vector-group-contact-2 vector-group-contact animated vector-group-contacts" d="M118.392 35.1651C115.555 35.3286 113.321 38.7736 114.042 41.211C115.465 46.0222 122.4 41.2668 124.541 38.2201C126.973 34.7586 124.295 33.9148 121.322 34.0295C118.649 34.1326 115.831 34.6909 114.891 37.4683" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1;"></path>
+                          
+                            <path class="vector-group-contact-3 vector-group-contact animated vector-group-contacts" d="M130.493 33.4219C130.357 35.1108 130.017 36.627 129.34 38.3162C129.025 39.103 128.443 41.453 127.644 42.0269C126.694 42.71 128.113 39.936 128.663 38.956C129.33 37.7681 130.38 35.8757 131.588 35.0533C133.709 33.6088 135.013 35.5918 135.528 37.0206C136.16 38.7712 134.991 41.4574 135.649 42.9226" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1;"></path>
+                          
+                            <path class="vector-group-contact-4 vector-group-contact animated vector-group-contacts" d="M140.959 26.6191C140.172 29.0364 139.832 31.4005 139.263 33.8167" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1;"></path>
+                          
+                            <g class="vector-group-contact-5 vector-group-contact animated vector-group-contacts" style="opacity: 1;">
+                              <path d="M148.833 27.8418C146.824 30.037 145.867 32.0227 145.177 34.6395C144.636 36.6874 143.371 39.8063 143.799 41.741C144.349 44.2325 150.546 39.2356 151.714 38.2062" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M141.812 35.0393C144.085 35.0069 146.295 34.7597 148.591 33.8877" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                            <g class="vector-group-contact-6 vector-group-contact animated vector-group-contacts" style="opacity: 1;">
+                              <path d="M185.527 9.59382C185.072 10.6123 184.693 11.2227 185.317 9.78575C186.281 7.56571 187.55 5.16677 187.361 2.9241C187.29 2.07887 186.756 1.10076 185.792 1.00476C184.281 0.854201 182.856 4.31936 182.477 5.24331C178.302 15.4034 176.195 25.8564 172.19 36.0648C171.099 38.8453 169.882 41.65 169.044 44.4619C168.504 46.2765 168.772 43.3685 168.783 42.9904" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M168.316 34.9295C171.539 35.3537 175.03 35.045 178.441 34.6416" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                          
+                            <path class="vector-group-contact-7 vector-group-contact animated vector-group-contacts" d="M181.363 38.1469C181.776 37.4322 182.044 36.3663 180.962 37.4751C179.962 38.5004 179.427 40.1182 179.503 41.2978C179.585 42.5794 180.261 43.4383 181.633 43.553C183.652 43.7217 185.12 42.1771 186.402 40.61C187.884 38.7979 189.936 35.1377 186.417 35.3158C183.048 35.4864 181.079 38.026 179.569 40.738" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1;"></path>
+                          
+                            <path class="vector-group-contact-8 vector-group-contact animated vector-group-contacts" d="M193.975 34.8584C191.998 38.0722 191.18 41.6994 190.38 45.0949C190.331 45.3008 190.791 43.3486 190.892 42.9196C191.319 41.1116 192.341 39.5297 193.606 37.9613C194.611 36.7151 196.654 34.4588 198.397 34.9224C199.753 35.283 199.293 36.889 201.166 35.7221" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1;"></path>
+                          
+                            <g class="vector-group-contact-9 vector-group-contact animated vector-group-contacts" style="opacity: 1;">
+                              <path d="M204.065 36.1241C202.115 37.4658 200.331 41.0628 201.039 42.9697C202.055 45.7044 206.558 40.4623 207.329 39.291C208.938 36.8454 209.193 35.3938 206.392 35.0364C203.523 34.6704 201.992 38.4591 201.865 40.4426" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M207.935 37.2754C204.72 41.7948 200.441 59.9091 192.277 58.5321C188.977 57.9755 190.216 54.5621 192.602 52.6941C195.764 50.2182 200.538 48.3658 204.242 47.9277" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                          
+                            <path class="vector-group-contact-10 vector-group-contact animated vector-group-contacts" d="M211.733 38.8846C213.296 38.8846 218.392 39.495 218.875 37.4451C219.462 34.9553 217.592 33.8321 215.209 35.4298C212.993 36.9159 210.937 39.7734 211.137 42.1795C211.499 46.5264 216.623 42.8193 219.201 42.3394" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1;"></path>
+                          
+                            <g class="vector-group-contact-11 vector-group-contact animated vector-group-contacts" style="opacity: 1;">
+                              <path d="M226.145 34.2676C225.305 35.7553 221.65 42.17 223.673 43.0166C225.107 43.6167 228.072 40.9283 229.521 40.0256" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M222.109 39.2394C223.535 38.6333 228.959 36.31 229.911 37.512" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                           <g class="vector-group-contact-12 vector-group-contact animated vector-group-contacts" style="opacity: 1;">
+                            <path d="M247.024 36.7097C243.754 37.0702 242.237 41.1949 243.987 43.0435C246.046 45.2183 249.156 43.7976 250.905 40.8842C253.992 35.7405 248.415 33.735 244.294 36.9976" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M252.552 35.8457C251.498 38.2903 250.653 40.7539 252.478 42.4354C253.691 43.5528 255.645 41.7594 256.723 40.74" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                           </g>
+                          
+                            <path class="vector-group-contact-13 vector-group-contact animated vector-group-contacts" d="M264.161 21.6602C262.705 25.7374 261.28 29.8063 259.58 33.848C259.01 35.2026 258.315 36.5475 257.801 37.9106C257.357 39.0857 257.248 40.3248 256.681 41.4774C256.651 41.5375 255.97 42.7488 256.1 42.1971C256.415 40.8637 257.802 39.1493 258.749 38.0705C261.634 34.7839 265.266 33.6233 265.39 38.1985C265.498 42.1453 260.794 44.4044 257.322 44.4044" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1;"></path>
+                          
+                            <path class="vector-group-contact-14 vector-group-contact animated vector-group-contacts" d="M272.14 36.7157C269.834 37.8258 265.872 41.1899 268.244 43.2095C270.59 45.2073 273.714 42.625 275.321 40.2345C276.772 38.0758 277.072 35.8802 274.467 35.6281C272.323 35.4205 269.134 36.9665 268.048 39.0189" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1;"></path>
+                          
+                            <path class="vector-group-contact-15 vector-group-contact animated vector-group-contacts" d="M280.979 35.041C280.421 36.217 276.937 44.2484 280.07 43.918C282.549 43.6566 285.067 37.7565 286.223 35.9367C287.469 33.9755 285.774 37.3184 285.609 37.984C285.312 39.192 283.752 43.5573 285.019 44.2539" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1;"></path>
+                          
+                             <g class="vector-group-contact-16 vector-group-contact animated vector-group-contacts" style="opacity: 1;">
+                            <path d="M293.923 32.7881C293.077 34.8512 292.151 36.8786 291.593 38.978C291.272 40.1893 289.847 43.6789 291.372 44.2402C293.302 44.95 296.731 41.3769 298.599 40.5614" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M288.881 39.1219C290.303 38.6594 295.089 36.8767 295.955 37.9703" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                             </g>
+                             <g class="vector-group-contact-17 vector-group-contact animated vector-group-contacts" style="opacity: 1;">
+                            <path d="M145.647 64.0254C143.839 66.074 142.688 68.2468 141.31 70.5032C140.414 71.9705 138.545 74.6014 138.699 76.2132C138.766 76.908 144.38 74.5564 145.275 74.3898" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M138.627 71.2231C140.577 70.9433 142.535 70.3594 144.45 70.3594" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                             </g>
+                          
+                          
+                            <path class="vector-group-contact-18 vector-group-contact animated vector-group-contacts" d="M153.45 60.8418C153.302 62.7897 152.405 64.5649 151.532 66.4719C150.342 69.0686 149.233 71.6858 148.095 74.2932C148.006 74.4963 147.144 76.9823 147.614 75.8447C148.362 74.0344 149.325 72.5356 150.628 70.9343C151.559 69.7894 154.747 66.2749 154.721 69.2549C154.705 71.0209 154.265 72.9575 153.56 74.741C153.436 75.0546 152.742 76.7593 152.448 76.3885" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1;"></path>
+                          
+                            <path class="vector-group-contact-19 vector-group-contact animated vector-group-contacts" d="M158.181 72.5146C160.946 71.9036 166.251 72.0587 168.149 69.1238C169.876 66.4536 166.368 66.5361 164.536 66.8845C161.119 67.5343 158.421 70.0841 157.711 73.2504C156.607 78.1768 162.751 76.2012 165.92 74.8178" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1;"></path>
+                          
+                            <path class="vector-group-contact-20 vector-group-contact animated vector-group-contacts" d="M189.577 69.5945C190.366 68.3554 190.784 66.9906 188.718 68.2189C186.685 69.428 185.622 71.5103 185.108 73.4971C184.613 75.4097 184.432 77.4105 186.858 77.3678C188.426 77.3402 189.678 76.2658 191.11 75.6404" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1;"></path>
+                          
+                            <path class="vector-group-contact-21 vector-group-contact animated vector-group-contacts" d="M195.771 69.901C194.098 71.0883 192.686 74.4739 194.25 75.659C196.77 77.5675 200.099 73.6024 201.194 71.2285C202.289 68.8524 200.296 68.2696 198.174 68.4935C194.962 68.8322 193.812 71.6879 192.979 74.2195" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1;"></path>
+                          
+                            <path class="vector-group-contact-22 vector-group-contact animated vector-group-contacts" d="M205.692 68.9414C204.524 70.7664 202.673 74.9274 204.716 76.2189C206.449 77.3144 209.097 73.1333 209.88 71.9484C210.21 71.4485 210.893 70.58 211.026 70.013C211.197 69.2863 210.218 71.4016 209.97 72.1243C209.278 74.1357 208.085 76.6242 208.777 78.4422" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1;"></path>
+                          
+                             <g class="vector-group-contact-23 vector-group-contact animated vector-group-contacts" style="opacity: 1;">
+                            <path d="M216.861 64.209C216 69.5937 213.312 74.9512 211.459 80.2995C210.706 82.4711 210.13 84.6543 209.395 86.8252C208.924 88.2165 208.999 87.5297 209.203 86.6653" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M213.987 75.1492C214.648 72.7473 216.182 70.7579 218.666 69.5192C220.821 68.4444 221.386 69.7862 221.361 71.4705C221.325 73.9525 219.873 75.9859 217.158 77.0366C216.411 77.3256 213.737 77.9726 213.512 77.1645" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                             </g>
+                          
+                            <path class="vector-group-contact-24 vector-group-contact animated vector-group-contacts" d="M227.225 70.1169C225.782 71.2969 222.335 74.5021 224.238 76.0989C225.764 77.3799 229.208 75.8233 230.565 74.2115C234.331 69.7388 227.932 68.8242 224.655 70.9806" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1;"></path>
+                          
+                            <path class="vector-group-contact-25 vector-group-contact animated vector-group-contacts" d="M236.158 69.8281C235.232 71.9742 234.845 74.1451 234.332 76.3219C234.298 76.4631 234.914 74.7868 235.153 74.3706C235.812 73.2212 236.801 71.8504 237.945 71.0277C239.781 69.7083 240.06 72.7794 240.098 73.7468C240.16 75.2842 239.367 80.057 239.742 78.4652" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1;"></path>
+                          </svg>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://pisanchynplumbing.com/media/WEBP/51/2997cb/img/contact/van.webp" 
+                         alt="Wayne J. Pisanchyn Plumbing & Heating Service Van"
+                         class="van-image w-full h-auto rounded-lg transform translate-x-4 md:translate-x-8"
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+
+
+    
+
+<footer class="bg-[#000033] text-white py-8">
+    <div class="container mx-auto px-4">
+        <!-- Main Footer Content -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <!-- About Us -->
+            <div>
+                <h3 class="text-xl mb-4">About Us</h3>
+                <p class="text-gray-300 text-sm">
+                    1106 Lackawanna Trail<br>
+                    Clarks Summit PA. 18411
+                </p>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h3 class="text-xl mb-4">Services</h3>
+                <a href="#" class="footer-link block mb-2">View Our Services</a>
+            </div>
+
+            <!-- Products -->
+            <div>
+                <h3 class="text-xl mb-4">Products</h3>
+                <a href="#" class="footer-link block mb-2">Browse Products</a>
+            </div>
+
+            <!-- FAQ -->
+            <div>
+                <h3 class="text-xl mb-4">FAQ</h3>
+                <a href="#" class="footer-link block mb-2">Common Questions</a>
+            </div>
+        </div>
+
+        <!-- Contact & Social -->
+        <div class="flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-6">
+            <div class="flex flex-col md:flex-row items-center gap-4 mb-4 md:mb-0">
+                <a href="tel:5705631699" class="footer-link">(570) 563-1699</a>
+                <span class="hidden md:inline text-gray-500">|</span>
+                <a href="mailto:wayne@pisanchynplumbing.com" class="footer-link">wayne@pisanchynplumbing.com</a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="flex gap-4">
+                <a href="#" class="social-icon" aria-label="Facebook">
+                    <i class="fab fa-facebook-f text-white"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Google">
+                    <i class="fab fa-google text-white"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="flex flex-col md:flex-row justify-between items-center border-t border-gray-700 mt-6 pt-6 text-sm text-gray-400">
+            <p>© Wayne J Pisanchyn Inc Plumbing & Heating</p>
+            <p class="mt-2 md:mt-0">Web Design — Direct Line Development</p>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
