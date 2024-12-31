@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -260,7 +261,7 @@
     <div class="relative h-auto pb-12">
         <!-- Background image for hero section -->
         <div class="absolute inset-0">
-            <img src="https://pisanchynplumbing.com/media/std_page/background/background_1_OspEZ4R.normal.jpg" 
+            <img src="{% static 'background_1_uzQoEn7.normal.jpg' %}"  
                  alt="Background" 
                  class="w-full h-full object-cover"
             />
@@ -273,10 +274,10 @@
                     Professional Plumbing
                 </div>
                 <div class="flex items-center gap-6">
-                    <a href="#" class="text-gray-600 hover:text-blue-800">About Us</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-800">Services</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-800">Products</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-800">FAQ</a>
+                    <a href="/about/" class="text-gray-600 hover:text-blue-800">About Us</a>
+                    <a href="/services/" class="text-gray-600 hover:text-blue-800">Services</a>
+                    <a href="/products" class="text-gray-600 hover:text-blue-800">Products</a>
+                    <a href="/faq" class="text-gray-600 hover:text-blue-800">FAQ</a>
                     <a href="tel:555-555-5555" class="text-blue-800 font-bold">(555) 555-5555</a>
                     <div class="flex items-center text-blue-800">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -305,8 +306,8 @@
                 <p class="text-xl text-gray-600 mb-8">
                     We are here to help you. Feel free to contact us if you have any questions!
                 </p>
-                <a href="#contact" class="bg-green-700 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full focus:outline-none focus:shadow-outline">
-                    TALK TO A SPECIALIST
+                <a href='/contacts/' class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                    TALK TO A SPECIALIST TODAY
                 </a>
             </div>
         </div>
@@ -603,7 +604,7 @@
                 </div>
                 
                 <div class="relative">
-                    <img src="https://pisanchynplumbing.com/media/WEBP/51/2997cb/img/contact/van.webp" 
+                    <img src="{% static 'van.webp' %}" 
                          alt="Wayne J. Pisanchyn Plumbing & Heating Service Van"
                          class="van-image w-full h-auto rounded-lg transform translate-x-4 md:translate-x-8"
                          loading="lazy">
