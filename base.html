@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -173,80 +172,33 @@
     <div class="relative h-screen">
         <!-- Background image for hero section -->
         <div class="absolute inset-0">
-            <img src="{% static 'main-back-news.jpg' %}" 
+            <img src="https://pisanchynplumbing.com/static/img/main-back-news.webp" 
                  alt="Background" 
                  class="w-full h-full object-cover"
             />
         </div>
 
         <!-- Navigation -->
-        <nav class="py-4 absolute w-full top-0 z-50 ">
+        <nav class="py-4 absolute w-full top-0 z-50">
             <div class="container mx-auto px-4 flex justify-between items-center">
-                <!-- Logo -->
                 <div class="text-2xl font-bold text-blue-800">
                     Professional Plumbing
                 </div>
-        
-                <!-- Links for larger screens -->
-                <div class="hidden md:flex items-center gap-6">
-                    <a href="/about/" class="text-gray-600 hover:text-blue-800">About Us</a>
-                    <a href="/services/" class="text-gray-600 hover:text-blue-800">Services</a>
-                    <a href="/products" class="text-gray-600 hover:text-blue-800">Products</a>
-                    <a href="/faq" class="text-gray-600 hover:text-blue-800">FAQ</a>
-                    <a href="tel:5705631699" class="text-blue-800 font-bold">(570) 563-1699</a>
-                    <div class="flex items-center text-blue-800">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <a href="/contacts/" class="ml-1 text-blue-800">24/7 Support</a>
-                    </div>
-                </div>
-        
-                <!-- Hamburger Menu for small screens -->
-                <button id="menu-toggle" class="md:hidden text-blue-800 focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
-        </nav>
-        
-        <div id="sidebar" class="fixed inset-0 bg-gray-800 bg-opacity-75 hidden z-50 flex items-center justify-center">
-            <div class="w-64 bg-white shadow-lg rounded-lg flex flex-col">
-                <button id="close-sidebar" class="self-end p-4 text-gray-600 focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-                <nav class="flex flex-col p-6 space-y-4 text-center">
-                    <a href="/about/" class="text-gray-600 hover:text-blue-800">About Us</a>
-                    <a href="/services/" class="text-gray-600 hover:text-blue-800">Services</a>
-                    <a href="/products" class="text-gray-600 hover:text-blue-800">Products</a>
-                    <a href="/faq" class="text-gray-600 hover:text-blue-800">FAQ</a>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="text-gray-600 hover:text-blue-800">About Us</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-800">Services</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-800">Products</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-800">FAQ</a>
                     <a href="tel:555-555-5555" class="text-blue-800 font-bold">(555) 555-5555</a>
-                    <div class="flex items-center justify-center text-blue-800">
+                    <div class="flex items-center text-blue-800">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span class="ml-1">24/7 Support</span>
                     </div>
-                </nav>
+                </div>
             </div>
-        </div>
-        <script>
-            const menuToggle = document.getElementById('menu-toggle');
-            const sidebar = document.getElementById('sidebar');
-            const closeSidebar = document.getElementById('close-sidebar');
-        
-            menuToggle.addEventListener('click', () => {
-                sidebar.classList.toggle('hidden');
-            });
-        
-            closeSidebar.addEventListener('click', () => {
-                sidebar.classList.add('hidden');
-            });
-        </script>
-        
+        </nav>
 
         <!-- Hero Content -->
         <div class="relative z-10 container mx-auto px-4 pt-32 ">
@@ -257,9 +209,9 @@
                 <p class="text-lg text-gray-700 mb-8">
                     Our team of qualified, licensed plumbers offers superior plumbing solutions to local residents. We are proud to be your local choice.
                 </p>
-                <a href='/contacts/' class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">
                     TALK TO A SPECIALIST TODAY
-                </a>
+                </button>
             </div>
         </div>
     </div>
@@ -320,7 +272,7 @@
              height="366" 
              decoding="async" 
              loading="lazy" 
-             src="{% static 'plumbing-back.webp' %}">
+             src="https://pisanchynplumbing.com/media/WEBP/1f/184ea4/img/plumbing-back.webp">
         <div class="plumbing__img">
             <a href="#" class="plumbing__pusk">
                 <img alt="" 
@@ -379,7 +331,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             <!-- Plumbing -->
             <div class="text-white">
-                <img src="{% static 'plumbing.jpg' %}" 
+                <img src="https://pisanchynplumbing.com/media/services/preview/preview_1.normal.jpg" 
                      alt="Plumbing Services" 
                      class="w-full h-64 object-cover rounded-lg mb-6">
                 <h3 class="text-3xl font-semibold mb-4">Plumbing</h3>
@@ -396,7 +348,7 @@
 
             <!-- Heating -->
             <div class="text-white">
-                <img src="{% static 'preview_2.normal.jpg' %}" 
+                <img src="https://pisanchynplumbing.com/media/services/preview/preview_2.normal.jpg" 
                      alt="Heating Services" 
                      class="w-full h-64 object-cover rounded-lg mb-6">
                 <h3 class="text-3xl font-semibold mb-4">Heating</h3>
@@ -411,7 +363,7 @@
 
             <!-- Air Conditioning -->
             <div class="text-white">
-                <img src="{% static 'preview_3.normal.jpg' %}" 
+                <img src="https://pisanchynplumbing.com/media/services/preview/preview_3.normal.jpg" 
                      alt="Air Conditioning Services" 
                      class="w-full h-64 object-cover rounded-lg mb-6">
                 <h3 class="text-3xl font-semibold mb-4">Air Conditioning</h3>
@@ -427,7 +379,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Water Heater -->
             <div class="text-white">
-                <img src="{% static 'preview_4.normal.jpg' %}" 
+                <img src="https://pisanchynplumbing.com/media/services/preview/preview_4.normal.jpg" 
                      alt="Water Heater Services" 
                      class="w-full h-64 object-cover rounded-lg mb-6">
                 <h3 class="text-3xl font-semibold mb-4">Water Heater</h3>
@@ -438,7 +390,7 @@
 
             <!-- Ductless Mini-Split -->
             <div class="text-white">
-                <img src="{% static 'preview_5.normal.jpg' %}" 
+                <img src="https://pisanchynplumbing.com/media/services/preview/preview_5.normal.jpg" 
                      alt="Ductless Mini-Split Services" 
                      class="w-full h-64 object-cover rounded-lg mb-6">
                 <h3 class="text-3xl font-semibold mb-4">Ductless Mini-Split Heat Pumps</h3>
@@ -468,13 +420,13 @@
                 <!-- Awards Section -->
                 <div class="mt-16 relative">
                     <div class="flex items-center gap-6">
-                        <img src="{% static 'certificate_1.webp' %}" 
+                        <img src="https://pisanchynplumbing.com/media/WEBP/c8/a30fe1/img/certificate/certificate_1.webp" 
                              alt="Award 1" 
                              class="w-24 h-auto">
-                        <img src="{% static 'certificate_2.webp' %}" 
+                        <img src="https://pisanchynplumbing.com/media/WEBP/76/da63c1/img/certificate/certificate_2.webp" 
                              alt="Award 2" 
                              class="w-24 h-auto">
-                        <img src="{% static 'certificate_3.webp' %}" 
+                        <img src="https://pisanchynplumbing.com/media/WEBP/1b/29e79a/img/certificate/certificate_3.webp" 
                              alt="Award 3" 
                              class="w-24 h-auto">
                              <h2 class="text-gray-600 mt-2">
@@ -499,10 +451,10 @@
             <!-- Right Content - Image -->
             <div class="relative w-full lg:w-1/2">
                 <div class="relative">
-                    <img src="{% static 'man.webp' %}"
+                    <img src="https://pisanchynplumbing.com/media/WEBP/9c/f9f829/img/certificate/man.webp"
                          alt="Professional Plumber"
                          class="w-full h-auto rounded-lg z-10 relative">
-                    <img src="{% static 'van.webp' %}"
+                    <img src="https://pisanchynplumbing.com/media/WEBP/c7/a5565e/img/certificate/van.webp"
                          alt="Service Van"
                          class="absolute top-0 right-0 w-2/3 h-auto z-0">
                          
@@ -789,7 +741,7 @@
             </div>
             
             <div class="relative">
-                <img src="{% static 'van.webp' %}" 
+                <img src="https://pisanchynplumbing.com/media/WEBP/51/2997cb/img/contact/van.webp" 
                      alt="Wayne J. Pisanchyn Plumbing & Heating Service Van"
                      class="van-image w-full h-auto rounded-lg transform translate-x-4 md:translate-x-8"
                      loading="lazy">

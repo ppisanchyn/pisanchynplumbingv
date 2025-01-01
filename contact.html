@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Plumbing Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .rotating-text {
+            animation: rotate 20s linear infinite;
+        }
+        
+        .video-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                        url('https://pisanchynplumbing.com/media/WEBP/1f/184ea4/img/plumbing-back.webp');
+            background-size: cover;
+            background-position: center;
+        }
+        .plumbing__back {
+            overflow: hidden;
+            position: relative;
+            min-height: 366px;
+        }
+        
+        .plumbing__background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .plumbing__img {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 366px;
+        }
+        
+        .plumbing__circling {
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .plumbing__pusk {
+            position: relative;
+            width: 166px;
+            height: 166px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .plumbing__pusk::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+        }
+        
+        .play-icon {
+            position: relative;
+            z-index: 2;
+            width: 24px;
+            height: 24px;
+            color: #1e40af;
+        }
+
+        .testimonial {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .testimonial.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        .dot {
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background-color: #4F61D3;
+            width: 24px;
+        }
+
+        .star {
+            color: #4F61D3;
+        }
+        .vector-coupon {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .vector-coupon-1 { animation-delay: 0.2s; }
+        .vector-coupon-2 { animation-delay: 0.4s; }
+        .vector-coupon-3 { animation-delay: 0.6s; }
+        .vector-coupon-4 { animation-delay: 0.8s; }
+
+        .savings__hover {
+            opacity: 0;
+            stroke-dasharray: 2600;
+            stroke-dashoffset: 2600;
+            transition: opacity 0.3s ease;
+        }
+
+        .coupons__item:hover .savings__hover {
+            opacity: 1;
+            animation: drawLine 1.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes drawLine {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .coupons__text {
+            @apply text-center text-gray-600 mt-4;
+        }
+
+        .amount {
+            @apply text-[#0BA360] text-6xl font-bold mb-2;
+        }
+        
+            .contact-input {
+                @apply w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all;
+            }
+            
+            .phone-number {
+                @apply text-[#563-1699] hover:text-blue-700 transition-colors;
+            }
+            
+            .submit-button {
+                @apply bg-[#0BA360] text-white px-8 py-3 rounded-lg hover:bg-[#098951] transition-colors w-full md:w-auto;
+            }
+        
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'plumbing-green': '#006838'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Hero Section with Background -->
+    <div class="relative h-screen">
+        <!-- Background image for hero section -->
+        <div class="absolute inset-0">
+            <img src="{% static 'main-back-news.jpg' %}" 
+                 alt="Background" 
+                 class="w-full h-full object-cover"
+            />
+        </div>
+
+        <!-- Navigation -->
+        <nav class="py-4 absolute w-full top-0 z-50 ">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <!-- Logo -->
+                <div class="text-2xl font-bold text-blue-800">
+                    Professional Plumbing
+                </div>
+        
+                <!-- Links for larger screens -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="/about/" class="text-gray-600 hover:text-blue-800">About Us</a>
+                    <a href="/services/" class="text-gray-600 hover:text-blue-800">Services</a>
+                    <a href="/products" class="text-gray-600 hover:text-blue-800">Products</a>
+                    <a href="/faq" class="text-gray-600 hover:text-blue-800">FAQ</a>
+                    
+                    <a href="tel:5705631699" class="text-blue-800 font-bold">(570) 563-1699</a>
+                    <div class="flex items-center text-blue-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <a href="/contacts/" class="ml-1 text-blue-800">24/7 Support</a>
+                    </div>
+                </div>
+        
+                <!-- Hamburger Menu for small screens -->
+                <button id="menu-toggle" class="md:hidden text-blue-800 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        
+        <div id="sidebar" class="fixed inset-0 bg-gray-800 bg-opacity-75 hidden z-50 flex items-center justify-center">
+            <div class="w-64 bg-white shadow-lg rounded-lg flex flex-col">
+                <button id="close-sidebar" class="self-end p-4 text-gray-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <nav class="flex flex-col p-6 space-y-4 text-center">
+                    <a href="/about/" class="text-gray-600 hover:text-blue-800">About Us</a>
+                    <a href="/services/" class="text-gray-600 hover:text-blue-800">Services</a>
+                    <a href="/products" class="text-gray-600 hover:text-blue-800">Products</a>
+                    <a href="/faq" class="text-gray-600 hover:text-blue-800">FAQ</a>
+                    <a href="tel:555-555-5555" class="text-blue-800 font-bold">(555) 555-5555</a>
+                    <div class="flex items-center justify-center text-blue-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="ml-1">24/7 Support</span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const sidebar = document.getElementById('sidebar');
+            const closeSidebar = document.getElementById('close-sidebar');
+        
+            menuToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('hidden');
+            });
+        
+            closeSidebar.addEventListener('click', () => {
+                sidebar.classList.add('hidden');
+            });
+        </script>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 container mx-auto px-4 pt-32">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mt-11">
+                <!-- Contact Information -->
+                <div class="hidden md:block">
+                    <h1 class="text-5xl font-bold text-gray-900 mb-6">Contact Us</h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        CALL US NOW and speak to a live person (available 24 hours)<br>
+                        Mention a coupon for extra savings!
+                    </p>
+
+                    <div class="space-y-4 mb-8">
+                        <div>
+                            <span class="font-semibold">DALTON/ CLARKS SUMMIT</span>
+                            <a href="tel:5705631699" class="block text-xl font-bold text-[#563-1699]">(570) 563-1699</a>
+                        </div>
+                        <div>
+                            <span class="font-semibold">OLYPHANT</span>
+                            <a href="tel:5704899556" class="block text-xl font-bold text-[#563-1699]">(570) 489-9556</a>
+                        </div>
+                        <div>
+                            <span class="font-semibold">SCRANTON</span>
+                            <a href="tel:5703467733" class="block text-xl font-bold text-[#563-1699]">(570) 346-7733</a>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <p class="font-semibold">TEXT US - (570) 417-0793</p>
+                        <p class="font-semibold">
+                            SEND AN EMAIL to 
+                            <a href="mailto:waynej2@epix.net" class="text-blue-600 hover:text-blue-800">waynej2@epix.net</a>
+                        </p>
+                        <p class="text-sm text-gray-500">(Available during office hours)</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl shadow-xl p-8">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="mb-4">
+                            <input type="text" name="name" placeholder="Name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <input type="tel" name="phone" placeholder="Phone" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" name="email" placeholder="E-mail" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <input type="text" name="address" placeholder="Address" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <textarea name="message" placeholder="Message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <div class="g-recaptcha" data-sitekey="your-recaptcha-site-key"></div>
+                        </div>
+                        <div class="text-sm text-gray-500">
+                            This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" class="text-blue-600 hover:text-blue-800">Privacy Policy</a> and <a href="https://policies.google.com/terms" class="text-blue-600 hover:text-blue-800">Terms of Service</a> apply.
+                        </div>
+                        <div class="w-30 mx-auto">
+                            <button type="submit" class=" bg-green-700 hover:bg-green-800 text-white font-bold py-4 px-8 rounded-lg focus:outline-none focus:shadow-outline">SUBMIT</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+<footer class=" bg-[#000033] text-white py-8 ">
+    <div class="container mx-auto px-4">
+        <!-- Main Footer Content -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <!-- About Us -->
+            <div>
+                <h3 class="text-xl mb-4">About Us</h3>
+                <p class="text-gray-300 text-sm">
+                    1106 Lackawanna Trail<br>
+                    Clarks Summit PA. 18411
+                </p>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h3 class="text-xl mb-4">Services</h3>
+                <a href="#" class="footer-link block mb-2">View Our Services</a>
+            </div>
+
+            <!-- Products -->
+            <div>
+                <h3 class="text-xl mb-4">Products</h3>
+                <a href="#" class="footer-link block mb-2">Browse Products</a>
+            </div>
+
+            <!-- FAQ -->
+            <div>
+                <h3 class="text-xl mb-4">FAQ</h3>
+                <a href="#" class="footer-link block mb-2">Common Questions</a>
+            </div>
+        </div>
+
+        <!-- Contact & Social -->
+        <div class="flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-6">
+            <div class="flex flex-col md:flex-row items-center gap-4 mb-4 md:mb-0">
+                <a href="tel:5705631699" class="footer-link">(570) 563-1699</a>
+                <span class="hidden md:inline text-gray-500">|</span>
+                <a href="mailto:wayne@pisanchynplumbing.com" class="footer-link">wayne@pisanchynplumbing.com</a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="flex gap-4">
+                <a href="#" class="social-icon" aria-label="Facebook">
+                    <i class="fab fa-facebook-f text-white"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Google">
+                    <i class="fab fa-google text-white"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="flex flex-col md:flex-row justify-between items-center border-t border-gray-700 mt-6 pt-6 text-sm text-gray-400">
+            <p>© Wayne J Pisanchyn Inc Plumbing & Heating</p>
+            <p class="mt-2 md:mt-0">Web Design — Direct Line Development</p>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Plumbing Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .rotating-text {
+            animation: rotate 20s linear infinite;
+        }
+        
+        .video-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                        url('https://pisanchynplumbing.com/media/WEBP/1f/184ea4/img/plumbing-back.webp');
+            background-size: cover;
+            background-position: center;
+        }
+        .plumbing__back {
+            overflow: hidden;
+            position: relative;
+            min-height: 366px;
+        }
+        
+        .plumbing__background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .plumbing__img {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 366px;
+        }
+        
+        .plumbing__circling {
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .plumbing__pusk {
+            position: relative;
+            width: 166px;
+            height: 166px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .plumbing__pusk::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+        }
+        
+        .play-icon {
+            position: relative;
+            z-index: 2;
+            width: 24px;
+            height: 24px;
+            color: #1e40af;
+        }
+
+        .testimonial {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .testimonial.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        .dot {
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background-color: #4F61D3;
+            width: 24px;
+        }
+
+        .star {
+            color: #4F61D3;
+        }
+        .vector-coupon {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .vector-coupon-1 { animation-delay: 0.2s; }
+        .vector-coupon-2 { animation-delay: 0.4s; }
+        .vector-coupon-3 { animation-delay: 0.6s; }
+        .vector-coupon-4 { animation-delay: 0.8s; }
+
+        .savings__hover {
+            opacity: 0;
+            stroke-dasharray: 2600;
+            stroke-dashoffset: 2600;
+            transition: opacity 0.3s ease;
+        }
+
+        .coupons__item:hover .savings__hover {
+            opacity: 1;
+            animation: drawLine 1.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes drawLine {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .coupons__text {
+            @apply text-center text-gray-600 mt-4;
+        }
+
+        .amount {
+            @apply text-[#0BA360] text-6xl font-bold mb-2;
+        }
+        
+            .contact-input {
+                @apply w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all;
+            }
+            
+            .phone-number {
+                @apply text-[#563-1699] hover:text-blue-700 transition-colors;
+            }
+            
+            .submit-button {
+                @apply bg-[#0BA360] text-white px-8 py-3 rounded-lg hover:bg-[#098951] transition-colors w-full md:w-auto;
+            }
+
+            .nav-link {
+                @apply text-gray-600 hover:text-[#4F61D3] transition-colors;
+            }
+            
+            .support-badge {
+                @apply flex items-center text-[#4F61D3] font-semibold;
+            }
+    
+            .cta-button {
+                @apply inline-block bg-[#0BA360] text-white font-bold py-4 px-8 rounded-full hover:bg-[#098951] transition-all transform hover:scale-105;
+            }
+    
+            .breadcrumb {
+                @apply text-gray-500 hover:text-[#4F61D3] transition-colors;
+            }
+            .about-page-text {
+                position: relative;
+                padding-top: 131px;
+                width: 100%;
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+            .img-about {
+                position: absolute;
+                width: 77.6%;
+                left: 55.2%;
+                top: 80px;
+                transform: translateX(-46%);
+            }
+            .company-name {
+                background: linear-gradient(90deg, #1E3A8A 0%, #DC2626 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            
+            .content-wrapper {
+                animation: fadeIn 0.5s ease-in;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .carousel {
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+            
+            .carousel.active {
+                opacity: 1;
+            }
+            
+            .carousel-button {
+                @apply absolute top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-200 text-gray-800 hover:text-gray-900;
+            }
+            
+            .carousel-container {
+                @apply relative overflow-hidden bg-gray-100 rounded-lg shadow-lg;
+            }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'plumbing-green': '#006838'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Hero Section with Background -->
+    <div class="relative h-auto pb-12">
+        <!-- Background image for hero section -->
+        <div class="absolute inset-0">
+            <img src="{% static 'background_1_uzQoEn7.normal.jpg' %}"  
+                 alt="Background" 
+                 class="w-full h-full object-cover"
+            />
+        </div>
+
+        <!-- Navigation -->
+        <nav class="py-4 absolute w-full top-0 z-50 ">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <!-- Logo -->
+                <div class="text-2xl font-bold text-blue-800">
+                    Professional Plumbing
+                </div>
+        
+                <!-- Links for larger screens -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="/about/" class="text-gray-600 hover:text-blue-800">About Us</a>
+                    <a href="/services/" class="text-gray-600 hover:text-blue-800">Services</a>
+                    <a href="/products" class="text-gray-600 hover:text-blue-800">Products</a>
+                    <a href="/faq" class="text-gray-600 hover:text-blue-800">FAQ</a>
+                    <a href="tel:5705631699" class="text-blue-800 font-bold">(570) 563-1699</a>
+                    <div class="flex items-center text-blue-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <a href="/contacts/" class="ml-1 text-blue-800">24/7 Support</a>
+                    </div>
+                </div>
+        
+                <!-- Hamburger Menu for small screens -->
+                <button id="menu-toggle" class="md:hidden text-blue-800 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        
+        <div id="sidebar" class="fixed inset-0 bg-gray-800 bg-opacity-75 hidden z-50 flex items-center justify-center">
+            <div class="w-64 bg-white shadow-lg rounded-lg flex flex-col">
+                <button id="close-sidebar" class="self-end p-4 text-gray-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <nav class="flex flex-col p-6 space-y-4 text-center">
+                    <a href="/about/" class="text-gray-600 hover:text-blue-800">About Us</a>
+                    <a href="/services/" class="text-gray-600 hover:text-blue-800">Services</a>
+                    <a href="/products" class="text-gray-600 hover:text-blue-800">Products</a>
+                    <a href="/faq" class="text-gray-600 hover:text-blue-800">FAQ</a>
+                    <a href="tel:555-555-5555" class="text-blue-800 font-bold">(555) 555-5555</a>
+                    <div class="flex items-center justify-center text-blue-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="ml-1">24/7 Support</span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const sidebar = document.getElementById('sidebar');
+            const closeSidebar = document.getElementById('close-sidebar');
+        
+            menuToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('hidden');
+            });
+        
+            closeSidebar.addEventListener('click', () => {
+                sidebar.classList.add('hidden');
+            });
+        </script>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 container mx-auto px-4 pt-32">
+            <!-- Breadcrumb -->
+            <div class="mb-8">
+                <a href="/" class="breadcrumb">Home</a>
+                <span class="mx-2 text-gray-400">/</span>
+                <span class="text-gray-800">About Us</span>
+            </div>
+
+            <!-- Main Content -->
+            <div class="max-w-4xl">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                    We Are<br>
+                    Wayne J Pisanchyn<br>
+                    Inc Plumbing & Heating
+                </h1>
+                <p class="text-xl text-gray-600 mb-8">
+                    Your Expert Plumbing Technicians
+                </p>
+                <a href='/contacts/' class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                    TALK TO A SPECIALIST TODAY
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="content-wrapper max-w-6xl mx-auto">
+                <!-- Company Name -->
+                <h1 class="company-name text-5xl md:text-6xl lg:text-7xl font-bold mb-12 text-center">
+                    WAYNE J. PISANCHYN
+                </h1>
+
+                <!-- Description -->
+                <div class="max-w-4xl mx-auto mb-16">
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        With our many years in the Plumbing, Heating and AC business, Wayne J Pisanchyn is dedicated 
+                        to providing the best possible service for you and your family. You can count on us to provide you with 
+                        a system and solution that fits your family's unique needs and since we've installed many systems in Scranton 
+                        area, we've earned a reputation for doing the job right the first time. PA Registration # PA3922
+                    </p>
+                    <p class="text-gray-700 text-lg mt-6 font-medium">
+                        We are here to take your call!
+                    </p>
+                </div>
+
+                <!-- Image and Mascot Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-1 gap-8 items-center mx-auto">
+                    <!-- Image -->
+                    <div class="md:col-span-1">
+                        <img src="https://pisanchynplumbing.com/media/page_photos/0000/photo_67.wide.jpg?_=1591021615" 
+                             alt="Wayne J Pisanchyn Office" 
+                             class="rounded-lg shadow-lg mx-auto"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add intersection observer for animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.content-wrapper').forEach(wrapper => {
+            observer.observe(wrapper);
+        });
+    </script>
+
+
+
+    <div class="relative w-full max-w-2xl mb-8 mx-auto overflow-hidden">
+        <div class="text-center mb-8">
+            <h2 class="text-4xl font-bold text-gray-800">Some of Our Rewards</h2>
+        </div>
+        <!-- Carousel Items -->
+        <div class="flex transition-transform duration-500 ease-in-out" id="carousel">
+          <img src="https://pisanchynplumbing.com/media/page_photos/0000/photo_99.wide.jpg?_=1640842000" class="w-full flex-shrink-0" alt="Image 1">
+          <img src="https://pisanchynplumbing.com/media/page_photos/0000/photo_100.wide.jpg?_=1640842000" class="w-full flex-shrink-0" alt="Image 2">
+          <img src="https://pisanchynplumbing.com/media/page_photos/0000/photo_98.wide.jpg?_=1640841999" class="w-full flex-shrink-0" alt="Image 3">
+          <img src="https://pisanchynplumbing.com/media/page_photos/0000/photo_97.wide.jpg?_=1640841414" class="w-full flex-shrink-0" alt="Image 4">
+          <img src="https://pisanchynplumbing.com/media/page_photos/0000/photo_96.wide.jpg?_=1640841414" class="w-full flex-shrink-0" alt="Image 5">
+          <img src="https://pisanchynplumbing.com/media/page_photos/0000/photo_95.wide.jpg?_=1640841410" class="w-full flex-shrink-0" alt="Image 6">
+        </div>
+      
+        <!-- Navigation Buttons -->
+        <button 
+          class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2" 
+          id="prev">
+          &#9664;
+        </button>
+        <button 
+          class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2" 
+          id="next">
+          &#9654;
+        </button>
+      </div>
+      
+      <script>
+        const carousel = document.getElementById('carousel');
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+      
+        let currentIndex = 0;
+      
+        function updateCarousel() {
+          const width = carousel.offsetWidth;
+          carousel.style.transform = `translateX(-${currentIndex * width}px)`;
+        }
+      
+        next.addEventListener('click', () => {
+          const totalItems = carousel.children.length;
+          currentIndex = (currentIndex + 1) % totalItems;
+          updateCarousel();
+        });
+      
+        prev.addEventListener('click', () => {
+          const totalItems = carousel.children.length;
+          currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+          updateCarousel();
+        });
+      
+        window.addEventListener('resize', updateCarousel);
+      </script>
+      
+
+
+
+
+    
+
+<footer class="bg-[#000033] text-white py-8">
+    <div class="container mx-auto px-4">
+        <!-- Main Footer Content -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <!-- About Us -->
+            <div>
+                <h3 class="text-xl mb-4">About Us</h3>
+                <p class="text-gray-300 text-sm">
+                    1106 Lackawanna Trail<br>
+                    Clarks Summit PA. 18411
+                </p>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h3 class="text-xl mb-4">Services</h3>
+                <a href="#" class="footer-link block mb-2">View Our Services</a>
+            </div>
+
+            <!-- Products -->
+            <div>
+                <h3 class="text-xl mb-4">Products</h3>
+                <a href="#" class="footer-link block mb-2">Browse Products</a>
+            </div>
+
+            <!-- FAQ -->
+            <div>
+                <h3 class="text-xl mb-4">FAQ</h3>
+                <a href="#" class="footer-link block mb-2">Common Questions</a>
+            </div>
+        </div>
+
+        <!-- Contact & Social -->
+        <div class="flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-6">
+            <div class="flex flex-col md:flex-row items-center gap-4 mb-4 md:mb-0">
+                <a href="tel:5705631699" class="footer-link">(570) 563-1699</a>
+                <span class="hidden md:inline text-gray-500">|</span>
+                <a href="mailto:wayne@pisanchynplumbing.com" class="footer-link">wayne@pisanchynplumbing.com</a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="flex gap-4">
+                <a href="#" class="social-icon" aria-label="Facebook">
+                    <i class="fab fa-facebook-f text-white"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Google">
+                    <i class="fab fa-google text-white"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="flex flex-col md:flex-row justify-between items-center border-t border-gray-700 mt-6 pt-6 text-sm text-gray-400">
+            <p>© Wayne J Pisanchyn Inc Plumbing & Heating</p>
+            <p class="mt-2 md:mt-0">Web Design — Direct Line Development</p>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
